@@ -1,6 +1,8 @@
 # Exploring Fast API
 
-Hi! This is a FastAPI project for polls.
+Hi there! This is a FastAPI project for polls.
+
+It is an API for CRUD operations on polls and users.
 
 ### Technologies:
 - Python 3.10+
@@ -8,3 +10,5 @@ Hi! This is a FastAPI project for polls.
 - Poetry
 - Pydantic
 - Uvicorn
+
+###
