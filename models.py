@@ -1,5 +1,3 @@
-import sqlalchemy
-import databases
 from pydantic import BaseModel
 
 
