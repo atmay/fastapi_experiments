@@ -19,23 +19,20 @@ def upgrade():
     op.create_table(
         'users',
         sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
-        sa.Column('username', sa.String(30), nullable=False, name='username'),
-        sa.Column('email', sa.String(100), nullable=False, name='e-mail'),
+        sa.Column('username', sa.String(30), nullable=False),
+        sa.Column('email', sa.String(100), nullable=False),
     )
 
     op.create_table(
         'polls',
         sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
-        sa.Column('title', sa.Integer, primary_key=True, autoincrement=True, name='title'),
-        sa.Column('type', sa.String(30), nullable=False, name='type'),
-        sa.Column(
-            'is_voting_allowed', sa.String(100), nullable=False, name='voting allowed'
-        ),
+        sa.Column('title', sa.String(30), primary_key=True),
+        sa.Column('type', sa.String(30), nullable=False),
+        sa.Column('is_voting_allowed', sa.Boolean(), nullable=False),
         sa.Column(
             'is_adding_choices_allowed',
-            sa.String(100),
+            sa.Boolean(),
             nullable=False,
-            name='adding choices allowed',
         ),
     )
 
