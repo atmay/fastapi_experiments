@@ -7,6 +7,13 @@ Create Date: 2022-03-08 22:43:09.992020
 """
 from alembic import op
 import sqlalchemy as sa
+import enum
+
+
+class PollType(enum.Enum):
+    text = 1
+    image = 2
+
 
 # revision identifiers, used by Alembic.
 revision = '6dd314e405bc'
@@ -27,15 +34,18 @@ def upgrade():
         'polls',
         sa.Column('id', sa.Integer, primary_key=True, autoincrement=True),
         sa.Column('title', sa.String(30), primary_key=True),
-        sa.Column('type', sa.String(30), nullable=False),
+        sa.Column('type', sa.Enum(PollType), nullable=False),
         sa.Column('is_voting_allowed', sa.Boolean(), nullable=False),
         sa.Column(
             'is_adding_choices_allowed',
             sa.Boolean(),
             nullable=False,
         ),
+        sa.Column('created_at', sa.DateTime, nullable=False),
+        sa.Column('updated_at', sa.DateTime, nullable=False),
     )
 
 
 def downgrade():
     op.drop_table('users')
+    op.drop_table('polls')
