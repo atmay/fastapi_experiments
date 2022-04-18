@@ -1,8 +1,7 @@
-# Exploring Fast API
+# Fast API Polls App
 
-Hi there! This is a FastAPI project for polls.
+API for Polls App.
 
-It is an API for CRUD operations on polls and users.
 
 ### Technologies:
 - Python 3.10+
@@ -11,5 +10,3 @@ It is an API for CRUD operations on polls and users.
 - Poetry
 - Pydantic
 - Uvicorn
-
-###
