@@ -1,7 +1,7 @@
 """create_user_and_poll_tables
 
 Revision ID: 6dd314e405bc
-Revises: 
+Revises:
 Create Date: 2022-03-08 22:43:09.992020
 
 """
@@ -41,6 +41,7 @@ def upgrade():
             sa.Boolean(),
             nullable=False,
         ),
+        sa.Column('created_by', sa.Integer, nullable=False),
         sa.Column('created_at', sa.DateTime, nullable=False),
         sa.Column('updated_at', sa.DateTime, nullable=False),
     )
