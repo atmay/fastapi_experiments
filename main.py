@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from models import User, Poll
+from database.models.models import User, Poll
 
 app = FastAPI()
 
